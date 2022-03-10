@@ -1,0 +1,15 @@
+.Nav {
+    width: 96vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;   
+}
+
+.titleMain {
+    width: 39%;
+}
+
+.titleMain h1 {
+    margin: 0;
+}
