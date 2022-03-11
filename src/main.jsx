@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 import Nav from './Components/Nav/nav'
+import Header from './Components/Header/header'
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Main extends React.Component {
     return (
       <div>
         <Nav />
+        <Header />
       </div>
     )
   }

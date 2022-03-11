@@ -1,13 +1,19 @@
 :root {
   --backgroun-color-primary: #fcf9ee;
+  --color-text: #141414;
+  --font-family-base: "Favorit", sans-serif;
+  --font-first: normal 400 .85vw/.85vw var(--font-family-base);
+  --font-second: normal 400 170px/20px var(--font-family-base);
+  --font-third: normal 400 50px/25px var(--font-family-base);
+
+  --font-second-mobile: normal 400 60px/20px var(--font-family-base);
+  --font-third-mobile: normal 400 30px/20px var(--font-family-base);
 }
 
 
 body, html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Favorit", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--backgroun-color-primary);
@@ -15,9 +21,15 @@ body, html {
 }
 
 #root {
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: 0;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 
