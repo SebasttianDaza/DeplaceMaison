@@ -1,7 +1,7 @@
 .Header {
     margin-left: auto;
     margin-right: 7rem;
-    width: 893px;
+    width: 70%;
     height: auto;
     
 }
@@ -13,13 +13,13 @@
 .contentImage {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: auto auto ;
     grid-gap: 2rem;
 }
 
 .contentImage div {
-    width: 430px;
-    height: 607px;
+    width: auto;
+    height: auto;
     border: .3rem solid var(--color-text);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .titleFirst h2 {
-    width: 70%;
+    width: auto;
     font: var(--font-second);
     text-transform: uppercase;
     margin-left: auto;
@@ -44,7 +44,7 @@
 .secondFirst {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr .5fr;
+    grid-template-columns: auto auto;
     overflow: hidden;
     height: 150px;
 }
@@ -67,24 +67,48 @@
     margin: 1rem 0;
 }
 
-@media screen and (max-width: 900px) {
+.contentBtn {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 40%;
+    margin: 3rem 0 1rem auto;
+    height: 70px;
+}
+
+.linkImage {
+    position: relative;
+    left: auto;
+    top: auto;
+}
+
+.btnImagePosition {
+    position: absolute;
+    width: 55px;
+    height: 55px; 
+}
+
+.btnImageRelative {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    top: 14px;
+    left: 13px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 500px) {
     .Header {
-        width: 90%;
+        width: 80%;
         margin: 2rem auto;
     }
 
     .headerTitle {
         margin: 1rem 0;
-    }
-
-    .contentImage {
-        grid-gap: 1rem ;
-        justify-items: center;
-    }
-
-    .contentImage div {
-        width: 148px;
-        height: 209px;
     }
 
     .titleFirst {
@@ -122,8 +146,3 @@
 
 
 
-
-.contentBtn {
-    width: 50px;
-    height: 50px;
-}

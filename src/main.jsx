@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
-import Nav from './Components/Nav/nav'
-import Header from './Components/Header/header'
+import Nav from './Components/Nav/nav';
+import Header from './Components/Header/header';
 
 class Main extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -16,14 +16,13 @@ class Main extends React.Component {
         <Nav />
         <Header />
       </div>
-    )
+    );
   }
 }
-
 
 ReactDOM.render(
   <React.StrictMode>
     <Main />
   </React.StrictMode>,
   document.getElementById('root')
-)
+);
