@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Nav from './Components/Nav/nav';
-import Header from './Components/Header/header';
+import "./index.css";
+import Nav from "./Components/Nav/nav";
+import Header from "./Components/Header/header";
 
 class Main extends React.Component {
   constructor(props) {
@@ -24,5 +24,5 @@ ReactDOM.render(
   <React.StrictMode>
     <Main />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );

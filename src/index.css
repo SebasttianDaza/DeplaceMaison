@@ -5,9 +5,7 @@
   --font-first: normal 400 .85vw/.85vw var(--font-family-base);
   --font-second: normal 400 13vw/2vw var(--font-family-base);
   --font-third: normal 400 4vw/2vw var(--font-family-base);
-
-  --font-second-mobile: normal 400 60px/20px var(--font-family-base);
-  --font-third-mobile: normal 400 30px/20px var(--font-family-base);
+  --font-fourth: normal 400 1.5vw/1.5vw var(--font-family-base);
 }
 
 
