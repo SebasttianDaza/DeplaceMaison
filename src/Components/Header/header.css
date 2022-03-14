@@ -15,14 +15,27 @@
 .contentImage {
     display: grid;
     width: 100%;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto;
     grid-gap: 2rem;
 }
 
-.contentImage div {
+.imageClothes {
+    position: relative;
     width: auto;
     height: auto;
+    z-index: 3;
     border: .3rem solid var(--color-text);
+}
+
+
+.imageClothesPosition {
+    width:  12vw;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+    opacity: .9;
+    position: absolute;
+    z-index: 2;
 }
 
 
@@ -70,7 +83,7 @@
 .contentBtn {
     display: grid;
     grid-template-columns: auto auto;
-    width: 22%;
+    width: 20vw;
     margin: 3rem 0 1rem auto;
     height: 70px;
 }
@@ -78,15 +91,17 @@
 .linkExplore {
     display: grid;
     justify-self: end;
-    width: 70%;
+    width: auto;
     height: 100%;
+    margin: 0 auto;
     text-align: end;
 }
 
 .linkExplore a {
     align-self: center;
-    width: 90%;
-    margin-right: auto;
+    width: auto;
+    padding-bottom: .4rem;
+    
     font: var(--font-fourth);
     text-transform: uppercase;
     text-decoration: none;
@@ -141,8 +156,10 @@
     width: auto;
     height: auto;
     z-index: 1;
-    top: 10px;
-    left: 10px;
+    left: 1.5vw;
+    top: 1.5vw;
+    max-width: 35px;
+    max-height: 35px;
 }
 
 
