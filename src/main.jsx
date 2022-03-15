@@ -15,6 +15,31 @@ class Main extends React.Component {
       <div>
         <Nav />
         <Header />
+        <section className="contentMarketing">
+          <div className="tapeMarketing">
+            <div className="contentTape">
+              <div className="contentChildTape">
+                <div className="contentAnimation">
+                  <div className="childAnimation">
+                    <h4>
+                      Deplace Shop <span>.</span> Do not scroll
+                    </h4>
+                  </div>
+                  <div className="childAnimation">
+                    <h4>
+                      Deplace Shop <span>.</span> Do not scroll
+                    </h4>
+                  </div>
+                  <div className="childAnimation">
+                    <h4>
+                      Deplace Shop <span>.</span> Do not scroll
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
