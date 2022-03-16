@@ -23,7 +23,6 @@ class Main extends React.Component {
               <ChildMarque classe="childAnimation" />
               <ChildMarque classe="childAnimation" />
               <ChildMarque classe="childAnimation" />
-              <ChildMarque classe="childAnimation" />
             </div>
           </div>
         </section>
@@ -36,7 +35,7 @@ const ChildMarque = (props) => {
   return (
     <div className={props.classe}>
       <h4>
-        Deplace Shop <span>.</span> Do not scroll
+        <span>.</span>Deplace Shop <span>.</span> Do not scroll
       </h4>
     </div>
   );
