@@ -8,9 +8,13 @@
   --font-third: normal 400 4vw/2vw var(--font-family-base);
   --font-fourth: normal 400 2vw/1.5vw var(--font-family-base);
   --font-five: normal 400 2vw/1.6vw var(--font-family-base);
+  --font-six: normal 400 3vw/1.6vw var(--font-family-base);
+  --font-seven: normal 400 1.5vw/1.5vw var(--font-family-base);
 
+  --font-third-secondary: normal 400 4.3vw/2.5vw var(--font-family-base);
 
   --border-div: .2rem solid var(--color-text);
+
 }
 
 
@@ -40,8 +44,6 @@ img {
   margin: 7rem 0;
   height: 12vh;
 }
-
-
 
 .tapeMarquee {
   background-color: var(--background-color-second);
@@ -95,6 +97,57 @@ img {
   
 }
 
+.titleMarketing {
+  width: 70%;
+  height: auto;
+  margin: 4rem 7rem 4rem auto;
+}
+
+.titleContent {
+  width: 100%;
+  height: auto;
+}
+
+.childTwo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.childTwo a {
+  text-decoration: none;
+  font: var(--font-seven);
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.childTwo a span {
+  background-image: linear-gradient(var(--color-text), var(--color-text));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  transition: background-size .2s;
+}
+
+.childTwo h4 {
+  font: var(--font-third);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.childTwo h4 span {
+  background-image: linear-gradient(var(--color-text), var(--color-text));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  transition: background-size .2s;
+}
+
+.childGeneral h4 {
+  font: var(--font-third);
+  color: var(--color-text);
+  margin: 2rem 0;
+}
+
 @media screen and (max-width: 768px) {
   .contentMarquee {
     height: auto;
@@ -103,6 +156,33 @@ img {
 
   .tapeMarquee {
     height: 7vh;
+  }
+
+  .childAnimation {
+    font: var(--font-six);
+  }
+
+  .titleMarketing {
+    width: 80%;
+    margin: 4rem auto;
+  }
+
+  .childTwo {
+    grid-template-columns: .8fr auto;
+  }
+
+  .childGeneral h4 {
+    margin: 1.3rem 0;
+  }
+
+  .childTwo a {
+    font: var(--font-five);
+    width: auto;
+  }
+  
+
+  .childTwo h4, .childGeneral h4 {
+    font: var(--font-third-secondary);
   }
 }
 

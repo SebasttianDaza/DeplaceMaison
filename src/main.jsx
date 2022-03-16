@@ -26,6 +26,27 @@ class Main extends React.Component {
             </div>
           </div>
         </section>
+        <section className="titleMarketing">
+          <div className="titleContent">
+            <div className="childTwo">
+              <a href="">
+                <span>who we are</span>
+              </a>
+              <h4>
+                An independent <span>brand</span> of
+              </h4>
+            </div>
+            <div className="childGeneral">
+              <h4>urban trekking shoes and accessories</h4>
+            </div>
+            <div className="childGeneral">
+              <h4>that comes from a convergence of </h4>
+            </div>
+            <div className="childGeneral">
+              <h4>arts and personalities.</h4>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
