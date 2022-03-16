@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 import "./index.css";
 import Nav from "./Components/Nav/nav";
@@ -15,28 +16,14 @@ class Main extends React.Component {
       <div>
         <Nav />
         <Header />
-        <section className="contentMarketing">
-          <div className="tapeMarketing">
-            <div className="contentTape">
-              <div className="contentChildTape">
-                <div className="contentAnimation">
-                  <div className="childAnimation">
-                    <h4>
-                      Deplace Shop <span>.</span> Do not scroll
-                    </h4>
-                  </div>
-                  <div className="childAnimation">
-                    <h4>
-                      Deplace Shop <span>.</span> Do not scroll
-                    </h4>
-                  </div>
-                  <div className="childAnimation">
-                    <h4>
-                      Deplace Shop <span>.</span> Do not scroll
-                    </h4>
-                  </div>
-                </div>
-              </div>
+        <section className="contentMarquee">
+          <div className="tapeMarquee">
+            <div className="contentMarqueeChild">
+              <ChildMarque classe="childAnimation" />
+              <ChildMarque classe="childAnimation" />
+              <ChildMarque classe="childAnimation" />
+              <ChildMarque classe="childAnimation" />
+              <ChildMarque classe="childAnimation" />
             </div>
           </div>
         </section>
@@ -44,6 +31,20 @@ class Main extends React.Component {
     );
   }
 }
+
+const ChildMarque = (props) => {
+  return (
+    <div className={props.classe}>
+      <h4>
+        Deplace Shop <span>.</span> Do not scroll
+      </h4>
+    </div>
+  );
+};
+
+ChildMarque.propTypes = {
+  classe: PropTypes.string.isRequired,
+};
 
 ReactDOM.render(
   <React.StrictMode>
