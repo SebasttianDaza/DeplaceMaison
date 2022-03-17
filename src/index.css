@@ -1,6 +1,7 @@
 :root {
   --backgroun-color-primary: #fcf9ee;
   --background-color-second: #ddc92a;
+  --background-color-third: #e7d6c4;
   --color-text: #141414;
   --font-family-base: "Favorit", sans-serif;
   --font-first: normal 400 .85vw/.85vw var(--font-family-base);
@@ -12,9 +13,14 @@
   --font-seven: normal 400 1.5vw/1.5vw var(--font-family-base);
 
   --font-third-secondary: normal 400 4.3vw/2.5vw var(--font-family-base);
+  --font-five-secondary: normal 400 2.5vw/1.6vw var(--font-family-base);
 
   --border-div: .2rem solid var(--color-text);
 
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -175,10 +181,13 @@ img {
     margin: 1.3rem 0;
   }
 
-  .childTwo a {
-    font: var(--font-five);
+  .childTwo a span {
+    font: var(--font-five-secondary);
     width: auto;
+    padding-bottom: .2rem;
   }
+
+
   
 
   .childTwo h4, .childGeneral h4 {

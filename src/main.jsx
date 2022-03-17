@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import "./index.css";
 import Nav from "./Components/Nav/nav";
 import Header from "./Components/Header/header";
+import Draggable from "./Components/Draggable/draggable";
 
 class Main extends React.Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class Main extends React.Component {
             </div>
           </div>
         </section>
+        <Draggable />
       </div>
     );
   }

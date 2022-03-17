@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ["react", "prettier", "import"],
   rules: {
-    "no-console": "warn",
+    "no-console": "off",
     "react/react-in-jsx-scope": 0,
     "prettier/prettier": [
       "warn",
