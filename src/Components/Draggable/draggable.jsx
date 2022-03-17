@@ -6,12 +6,15 @@ function Dragable() {
   const [pressed, setPressed] = useState(false);
   const [startX, setStartX] = useState(0);
   const [x, setX] = useState(0);
+
+  const [animate, setAnimate] = useState(true);
   //Reference to the element
   const nodeChild = React.useRef(null);
 
   const mouseSlider = (e) => {
     setPressed(true);
     setStartX(e.clientX);
+    setAnimate(false);
     e.target.style.cursor = "grabbing";
   };
 
@@ -49,31 +52,64 @@ function Dragable() {
     }
   };
 
+  const activeAnimate = () => {
+    setTimeout(() => {
+      setAnimate(true);
+    }, 10000);
+  };
+
   return (
     <section
       className="draggableSlider"
       onMouseDown={(e) => mouseSlider(e)}
       onMouseEnter={(e) => mouseEnter(e)}
       onMouseMove={(e) => mouseMove(e)}
+      onMouseUp={() => activeAnimate()}
     >
       <div className="slider" ref={nodeChild}>
-        <Card classe="sliderCard" />
-        <Card classe="sliderCard" />
-        <Card classe="sliderCard" />
-        <Card classe="sliderCard" />
-        <Card classe="sliderCard" />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
       </div>
     </section>
   );
 }
 
 const Card = (props) => {
+  const [cardImage, cardContent] = props.classesChild;
   return (
-    <aside className={props.classe}>
-      <div>
+    <aside className={props.classe + " " + props.classesAnimation}>
+      <div className={cardImage}>
         <img src="" alt="" />
       </div>
-      <div>
+      <div className={cardContent}>
         <div>
           <img src="" alt="" />
         </div>
@@ -89,6 +125,8 @@ const Card = (props) => {
 
 Card.propTypes = {
   classe: PropTypes.string.isRequired,
+  classesAnimation: PropTypes.string,
+  classesChild: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Dragable;
