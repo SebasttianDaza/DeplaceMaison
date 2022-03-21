@@ -2,75 +2,62 @@ import "./draggable.css";
 import PropTypes from "prop-types";
 import React, {useState, useEffect} from "react";
 
+function useLocalState(defaultValue = 0) {
+  const [state, setState] = useState(defaultValue);
+
+  return [state, setState];
+}
+
+function changeStyle(e, draggable = "") {
+  e.target.classList.add(draggable);
+}
+
+function removeStyle(e, draggable = "") {
+  e.target.classList.remove(draggable);
+}
+
 function Dragable() {
-  const [pressed, setPressed] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [x, setX] = useState(0);
+  const [animate, setAnimate] = useLocalState(false);
 
-  const [animate, setAnimate] = useState(true);
-  //Reference to the element
-  const nodeChild = React.useRef(null);
-
-  const mouseSlider = (e) => {
-    setPressed(true);
-    setStartX(e.clientX);
-    setAnimate(false);
-    e.target.style.cursor = "grabbing";
-  };
-
-  const mouseEnter = (e) => {
-    e.target.style.cursor = "grab";
-  };
-
-  useEffect(() => {
-    const mouseup = () => {
-      setPressed(false);
-    };
-    window.removeEventListener("mouseup", mouseup);
-    window.addEventListener("mouseup", mouseup);
-    return () => {
-      window.removeEventListener("mouseup", mouseup);
-    };
-  });
-
-  const mouseMove = (e) => {
-    e.preventDefault();
-    if (!pressed) return;
-    setX(e.clientX - startX);
-    nodeChild.current.style.left = `${x}px`;
-    checkBoundary(e);
-  };
-
-  const checkBoundary = (e) => {
-    let outer = e.target.getBoundingClientRect();
-    let inner = nodeChild.current.getBoundingClientRect();
-
-    if (parseInt(nodeChild.current.style.left) > 0) {
-      nodeChild.current.style.left = 0;
-    } else if (inner.right < outer.right) {
-      nodeChild.current.style.left = `-${outer.right - inner.right}px`;
-    }
-  };
-
-  const activeAnimate = () => {
-    setTimeout(() => {
-      setAnimate(true);
-    }, 10000);
-  };
+  const slider = React.createRef();
+  const sliderChild = React.createRef();
 
   return (
-    <section
+    <div
       className="draggableSlider"
-      onMouseDown={(e) => mouseSlider(e)}
-      onMouseEnter={(e) => mouseEnter(e)}
-      onMouseMove={(e) => mouseMove(e)}
-      onMouseUp={() => activeAnimate()}
+      ref={slider}
+      onMouseDown={(e) => startSlider(e)}
+      onMouseMove={(e) => startMove(e)}
     >
-      <div className="slider" ref={nodeChild}>
+      <section className="slider" ref={sliderChild}>
         <Card
           classe="sliderCard"
           classesAnimation={animate ? "animate" : undefined}
           classesChild={["cardImage", "cardContent"]}
+          img={
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
+          }
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+          img={
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
+          }
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+        />
+        <Card
+          classe="sliderCard"
+          classesAnimation={animate ? "animate" : undefined}
+          classesChild={["cardImage", "cardContent"]}
+          img={
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
+          }
         />
         <Card
           classe="sliderCard"
@@ -82,23 +69,8 @@ function Dragable() {
           classesAnimation={animate ? "animate" : undefined}
           classesChild={["cardImage", "cardContent"]}
         />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
@@ -107,7 +79,7 @@ const Card = (props) => {
   return (
     <aside className={props.classe + " " + props.classesAnimation}>
       <div className={cardImage}>
-        <img src="" alt="" />
+        <img src={props.img} alt="" />
       </div>
       <div className={cardContent}>
         <div>
@@ -127,6 +99,7 @@ Card.propTypes = {
   classe: PropTypes.string.isRequired,
   classesAnimation: PropTypes.string,
   classesChild: PropTypes.arrayOf(PropTypes.string).isRequired,
+  img: PropTypes.string,
 };
 
 export default Dragable;

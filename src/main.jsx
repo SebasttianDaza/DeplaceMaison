@@ -8,10 +8,6 @@ import Header from "./Components/Header/header";
 import Draggable from "./Components/Draggable/draggable";
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>

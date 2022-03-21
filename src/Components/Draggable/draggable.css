@@ -1,23 +1,21 @@
 .draggableSlider {
     width: 100%;
     min-height: 400px;
-    overflow: hidden;
+    height: auto;
+    overflow: clip;
     position: relative;
     margin: 2rem 0;
 }
 
 .slider {
     display: grid;
-    position: absolute;
+    position: relative;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem;
     width: 140%;
     min-height: 400px;
     pointer-events: none;
     transition: 0s ease-in;
-    top: 0;
-    left: 0;
-    overflow: clip;
 }
 
 .sliderCard {
@@ -69,4 +67,9 @@
     .slider {
         min-height: 250px;
     }
+}
+
+div.activeDraggable {
+    cursor: grabbing;
+    cursor: -webkit-grabbing
 }
