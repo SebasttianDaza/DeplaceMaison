@@ -4,16 +4,18 @@
     height: 500px;
     user-select: none;
     overflow: clip;
+    touch-action: none;
 }
 
 .slider {
     display: grid;
+    justify-items: center;
     position: absolute;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem;
-    width: 140%;
-    min-height: 400px;
+    width: 130%;
     pointer-events: none;
+    touch-action: none;
 }
 
 .sliderCard {
@@ -21,7 +23,6 @@
     background-color: var(--background-color-third);
     white-space: nowrap;
     width: 100%;
-    max-width: 360px;
     padding: .5rem;
 }
 

@@ -16,16 +16,32 @@ function Dragable() {
   const slider = React.createRef();
   const sliderChild = React.createRef();
 
+  useEffect(() => {
+    const handleMouseUp = () => {
+      setPressed(false);
+    };
+
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [pressed]);
+
   const startSlider = (e) => {
     if (e.type === "mousedown") {
-      setPressed(true);
-      setStartPosition(e.clientX - slider.current.offsetLeft);
+      updateReusable(setPressed, true);
+      updateReusable(setStartPosition, e.clientX - sliderChild.current.offsetLeft);
       slider.current.style.cursor = "grabbing";
     }
     if (e.type === "touchstart") {
-      setPressed(true);
-      setStartPosition(e.touches[0].clientX - slider.current.offsetLeft);
+      updateReusable(setPressed, true);
+      updateReusable(setStartPosition, e.touches[0].clientX - sliderChild.current.offsetLeft);
     }
+  };
+
+  const updateReusable = (functions, value) => {
+    functions(value);
   };
 
   const mouseTouchEnter = () => {
@@ -35,15 +51,17 @@ function Dragable() {
 
   const moveSlider = (e) => {
     if (!pressed) return;
-    e.preventDefault();
     if (e.type === "mousemove") {
-      setXposition(e.clientX - startPosition);
+      e.preventDefault();
+      setXposition(e.clientX);
+      sliderChild.current.style.left = Xposition - startPosition + "px";
+      checkSize();
     }
     if (e.type === "touchmove") {
-      setXposition(e.touches[0].clientX - startPosition);
+      setXposition(e.touches[0].clientX);
+      sliderChild.current.style.left = `${Xposition - startPosition}px`;
+      checkSize();
     }
-    sliderChild.current.style.left = Xposition + "px";
-    checkSize();
   };
 
   const checkSize = () => {
@@ -52,7 +70,7 @@ function Dragable() {
     if (parseInt(sliderChild.current.style.left) > 0) {
       sliderChild.current.style.left = 0 + "px";
     } else if (inner.right < outer.right) {
-      sliderChild.current.style.left = `-${outer.width - inner.width}px`;
+      sliderChild.current.style.left = outer.width - inner.width + "px";
     }
   };
 
