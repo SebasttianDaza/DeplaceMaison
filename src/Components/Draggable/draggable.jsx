@@ -11,7 +11,7 @@ function Dragable() {
   const [pressed, setPressed] = useLocalState(false);
   const [startPosition, setStartPosition] = useLocalState(0);
   const [Xposition, setXposition] = useLocalState(0);
-  const [animate, setAnimate] = useLocalState(false);
+  const [heightAuto, setHeightAuto] = useLocalState(0);
 
   const slider = React.createRef();
   const sliderChild = React.createRef();
@@ -21,12 +21,17 @@ function Dragable() {
       setPressed(false);
     };
 
+    let heightSlider = sliderChild.current.getBoundingClientRect().height;
+    setHeightAuto(heightSlider);
+
+    slider.current.style.height = heightAuto + 20 + "px";
+
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [pressed]);
+  }, [pressed, heightAuto]);
 
   const startSlider = (e) => {
     if (e.type === "mousedown") {
@@ -59,7 +64,7 @@ function Dragable() {
     }
     if (e.type === "touchmove") {
       setXposition(e.touches[0].clientX);
-      sliderChild.current.style.left = `${Xposition - startPosition}px`;
+      sliderChild.current.style.left = Xposition - startPosition + "px";
       checkSize();
     }
   };
@@ -89,7 +94,6 @@ function Dragable() {
       <section className="slider" ref={sliderChild}>
         <Card
           classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
           classesChild={["cardImage", "cardContent"]}
           img={
             "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
@@ -97,35 +101,21 @@ function Dragable() {
         />
         <Card
           classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
           classesChild={["cardImage", "cardContent"]}
           img={
             "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
           }
         />
+        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
         <Card
           classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
           classesChild={["cardImage", "cardContent"]}
           img={
             "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
           }
         />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
-        <Card
-          classe="sliderCard"
-          classesAnimation={animate ? "animate" : undefined}
-          classesChild={["cardImage", "cardContent"]}
-        />
+        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
+        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
       </section>
     </div>
   );
@@ -134,7 +124,7 @@ function Dragable() {
 const Card = (props) => {
   const [cardImage, cardContent] = props.classesChild;
   return (
-    <aside className={props.classe + " " + props.classesAnimation}>
+    <aside className={props.classe}>
       <div className={cardImage}>
         <img src={props.img} alt="" />
       </div>

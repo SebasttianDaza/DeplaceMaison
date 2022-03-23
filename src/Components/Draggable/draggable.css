@@ -1,7 +1,7 @@
 .draggableSlider {
     width: 100%;
     position: absolute;
-    height: 500px;
+    min-height: 500px;
     user-select: none;
     overflow: clip;
     touch-action: none;
@@ -12,8 +12,8 @@
     justify-items: center;
     position: absolute;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 3rem;
-    width: 130%;
+    grid-gap: 1rem;
+    width: 140%;
     pointer-events: none;
     touch-action: none;
 }
@@ -22,8 +22,16 @@
     border: var(--border-div);
     background-color: var(--background-color-third);
     white-space: nowrap;
-    width: 100%;
+    width: 85%;
     padding: .5rem;
+}
+
+.firstCard {
+    margin-left: 1rem;
+}
+
+.LastCard {
+    margin-right: 1rem;
 }
 
 .animate {
@@ -59,12 +67,14 @@
 }
 
 @media screen and (max-width: 768px) {
-    .draggableSlider {
-        min-height: 300px;
-    }
 
     .slider {
-        min-height: 250px;
+        width: 280%;
+        grid-gap: .3rem;
+    }
+
+    .sliderCard {
+        width: 75%;
     }
 }
 
