@@ -1,7 +1,7 @@
 .draggableSlider {
     width: 100%;
     position: absolute;
-    min-height: 500px;
+    min-height: 70vh;
     user-select: none;
     overflow: clip;
     touch-action: none;
@@ -83,6 +83,10 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .draggableSlider {
+        min-height: 40vh;
+    }
 
     .slider {
         width: 280%;

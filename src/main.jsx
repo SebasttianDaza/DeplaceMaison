@@ -8,6 +8,48 @@ import Header from "./Components/Header/header";
 import Draggable from "./Components/Draggable/draggable";
 
 class Main extends React.Component {
+  childElementsSend() {
+    const element = [
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+      {
+        imgPrincipal:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+        imageSecondary:
+          "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+      },
+    ];
+    return element;
+  }
+
   render() {
     return (
       <div>
@@ -44,7 +86,7 @@ class Main extends React.Component {
             </div>
           </div>
         </section>
-        <Draggable />
+        <Draggable elementsRender={this.childElementsSend.bind(this)} />
       </div>
     );
   }
