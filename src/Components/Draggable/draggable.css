@@ -1,6 +1,9 @@
 .draggableSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    position: absolute;
+    position: relative;
     min-height: 70vh;
     user-select: none;
     overflow: clip;

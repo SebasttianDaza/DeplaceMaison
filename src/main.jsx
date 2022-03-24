@@ -6,6 +6,7 @@ import "./index.css";
 import Nav from "./Components/Nav/nav";
 import Header from "./Components/Header/header";
 import Draggable from "./Components/Draggable/draggable";
+import Button from "./Components/button/button.jsx";
 
 class Main extends React.Component {
   childElementsSend() {
@@ -87,6 +88,9 @@ class Main extends React.Component {
           </div>
         </section>
         <Draggable elementsRender={this.childElementsSend.bind(this)} />
+        <section className="sectionBtn">
+          <Button name="SHOP ALL" />
+        </section>
       </div>
     );
   }

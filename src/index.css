@@ -111,6 +111,7 @@ img {
   margin: 4rem 7rem 4rem auto;
 }
 
+
 .titleContent {
   width: 100%;
   height: auto;
@@ -156,6 +157,12 @@ img {
   margin: 2rem 0;
 }
 
+.sectionBtn {
+  width: 70%;
+  height: auto;
+  margin: 4rem auto;
+  position: relative;
+}
 @media screen and (max-width: 768px) {
   .contentMarquee {
     height: auto;
@@ -189,11 +196,13 @@ img {
     padding-bottom: .2rem;
   }
 
-
-  
-
   .childTwo h4, .childGeneral h4 {
     font: var(--font-third-secondary);
+  }
+
+  .sectionBtn {
+    margin: 0 auto;
+    width: 80%;
   }
 }
 
