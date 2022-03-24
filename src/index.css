@@ -14,6 +14,7 @@
 
   --font-third-secondary: normal 400 4.3vw/2.5vw var(--font-family-base);
   --font-five-secondary: normal 400 2.5vw/1.6vw var(--font-family-base);
+  --font-six-secondary: normal 500 3vw/1.6vw var(--font-family-base);
 
   --border-div: .2rem solid var(--color-text);
 
@@ -37,6 +38,7 @@ body, html {
   width: 100%;
   padding: 0;
   margin: 0;
+  height: auto;
 }
 
 img {

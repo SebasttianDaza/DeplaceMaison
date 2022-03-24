@@ -11,7 +11,6 @@ function Dragable() {
   const [pressed, setPressed] = useLocalState(false);
   const [startPosition, setStartPosition] = useLocalState(0);
   const [Xposition, setXposition] = useLocalState(0);
-  const [heightAuto, setHeightAuto] = useLocalState(0);
 
   const slider = React.createRef();
   const sliderChild = React.createRef();
@@ -21,17 +20,12 @@ function Dragable() {
       setPressed(false);
     };
 
-    let heightSlider = sliderChild.current.getBoundingClientRect().height;
-    setHeightAuto(heightSlider);
-
-    slider.current.style.height = heightAuto + 20 + "px";
-
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [pressed, heightAuto]);
+  }, [pressed, setPressed, sliderChild]);
 
   const startSlider = (e) => {
     if (e.type === "mousedown") {
@@ -59,12 +53,12 @@ function Dragable() {
     if (e.type === "mousemove") {
       e.preventDefault();
       setXposition(e.clientX);
-      sliderChild.current.style.left = Xposition - startPosition + "px";
+      sliderChild.current.style.left = `${Xposition - startPosition}px`;
       checkSize();
     }
     if (e.type === "touchmove") {
       setXposition(e.touches[0].clientX);
-      sliderChild.current.style.left = Xposition - startPosition + "px";
+      sliderChild.current.style.left = `${Xposition - startPosition}px`;
       checkSize();
     }
   };
@@ -94,45 +88,70 @@ function Dragable() {
       <section className="slider" ref={sliderChild}>
         <Card
           classe="sliderCard"
-          classesChild={["cardImage", "cardContent"]}
-          img={
-            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
-          }
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
         />
         <Card
           classe="sliderCard"
-          classesChild={["cardImage", "cardContent"]}
-          img={
-            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
-          }
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
         />
-        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
         <Card
           classe="sliderCard"
-          classesChild={["cardImage", "cardContent"]}
-          img={
-            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5"
-          }
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
         />
-        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
-        <Card classe="sliderCard" classesChild={["cardImage", "cardContent"]} />
+        <Card
+          classe="sliderCard"
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
+        />
+        <Card
+          classe="sliderCard"
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
+        />
+        <Card
+          classe="sliderCard"
+          classesChild={["cardImage", "cardContent", "contentImageCard", "contentImageInformation"]}
+          img={[
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/shoes.svg?alt=media&token=083024f6-3fbd-4c8b-ad7e-57cb1b4332a5",
+            "https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/imageMark.svg?alt=media&token=478f8bea-a50f-472a-8526-21477705acaa",
+          ]}
+        />
       </section>
     </div>
   );
 }
 
 const Card = (props) => {
-  const [cardImage, cardContent] = props.classesChild;
+  const [cardImage, cardContent, ...rest] = props.classesChild;
+  const [first, second] = props.img;
   return (
     <aside className={props.classe}>
       <div className={cardImage}>
-        <img src={props.img} alt="" />
+        <img src={first} alt="" />
       </div>
       <div className={cardContent}>
-        <div>
-          <img src="" alt="" />
+        <div className={rest[0]}>
+          <img src={second} alt="" />
         </div>
-        <div>
+        <div className={rest[1]}>
           <h5>duran</h5>
           <p>$230EUR</p>
           <h4>$120EUR</h4>
@@ -146,7 +165,7 @@ Card.propTypes = {
   classe: PropTypes.string.isRequired,
   classesAnimation: PropTypes.string,
   classesChild: PropTypes.arrayOf(PropTypes.string).isRequired,
-  img: PropTypes.string,
+  img: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Dragable;
