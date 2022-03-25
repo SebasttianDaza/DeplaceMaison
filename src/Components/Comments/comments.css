@@ -1,0 +1,51 @@
+.Article {
+    display: grid;
+    grid-template-columns: .9fr 1fr;
+    width: 55vw;
+    align-items: center;
+    overflow: clip;
+}
+
+.articleContentImage {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.contentImageArt {
+    position: absolute;
+    width: 6vw;
+    height: auto;
+    opacity: 0.5;
+}
+
+.contentTextArt h5 {
+    margin: 0 0 0 2rem;
+    text-align: left;
+    font: var(--font-fourth);
+    text-transform: uppercase;
+}
+
+.articleContentText {
+    overflow: clip;
+    width: 80%;
+}
+
+@media screen and (max-width:768px) {
+    .Article {
+        width: 90%;
+    }
+
+    .contentImageArt {
+        width: 14vw;
+    }
+
+    .contentTextArt h5 {
+        margin: 0;
+        font: var(---font-six-secondary);
+    }
+
+    .articleContentText {
+        width: 100%;
+    }
+}

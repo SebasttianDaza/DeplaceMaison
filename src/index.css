@@ -163,6 +163,16 @@ img {
   margin: 4rem auto;
   position: relative;
 }
+
+.sectionComments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 90%;
+  height: auto;
+  margin: 4rem auto 4rem 0;
+}
+
 @media screen and (max-width: 768px) {
   .contentMarquee {
     height: auto;
@@ -204,6 +214,7 @@ img {
     margin: 0 auto;
     width: 80%;
   }
+
 }
 
 

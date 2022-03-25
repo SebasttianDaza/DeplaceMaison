@@ -1,14 +1,14 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Portfolio Master</h1>
+<h1 align="center">Deplace Maison</h1>
 
 <div align="center">
   <h3>
-    <a href="https://{https://react-portfolio-863d8.web.app/}">
+    <a href="https://{https://deplacemaison-2f33d.web.app/}">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{[Repo](https://github.com/SebasttianDaza/Portfolio-Master)}">
+    <a href="https://{[Repo](https://github.com/SebasttianDaza/DeplaceMaison)}">
       Solution
     </a>
     <span> | </span>
@@ -32,11 +32,11 @@
 
 ## Overview
 
-![screenshot](https://firebasestorage.googleapis.com/v0/b/react-portfolio-863d8.appspot.com/o/AnyConv.com__portfolioMaster.svg?alt=media&token=8d54d0f1-0ad4-449a-9d67-86dcc9354c22)
+![screenshot](https://www.frontendpractice.com/static/20077d18295c4928154836b73e921ede/893fe/347e9d96-407c-4008-9218-4ee3a3edd600_deplace-maison.png)
 
-Website developed with ReactJS, Firebase, Notistack and CSS, I allo me learn a lot of new things, connections between components, design responsive and pagination with Arrays.
+Website developed with ReactJS, Firebase, WebAnimations and CSS, I allow me learn a lot of new things, connections between components, Hooks, design responsive and Web animations with CSS and React, also use ESLint and Prettier.
 
-This is developed part of Certificate of DevChallenges.io.
+The part the design responive with animations, draggable slider and gooey cursor it was so hard.
 
 ### Built With
 
@@ -45,7 +45,6 @@ This is developed part of Certificate of DevChallenges.io.
 - [React](https://reactjs.org/)
 - [CSS](https://vuejs.org/)
 - [Firebase](https://tailwindcss.com/)
-- [Notistack](https://github.com/iamhosseindhv/notistack)
 - [React Icons](https://react-icons.netlify.com/)
 - [Vite](https://vitejs.dev/)
 

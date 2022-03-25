@@ -7,6 +7,7 @@ import Nav from "./Components/Nav/nav";
 import Header from "./Components/Header/header";
 import Draggable from "./Components/Draggable/draggable";
 import Button from "./Components/button/button.jsx";
+import Comments from "./Components/Comments/comments.jsx";
 
 class Main extends React.Component {
   childElementsSend() {
@@ -90,6 +91,9 @@ class Main extends React.Component {
         <Draggable elementsRender={this.childElementsSend.bind(this)} />
         <section className="sectionBtn">
           <Button name="SHOP ALL" />
+        </section>
+        <section className="sectionComments">
+          <Comments />
         </section>
       </div>
     );

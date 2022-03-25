@@ -25,7 +25,7 @@ const Nav = () => {
         removeStyle(menu, "scrollAnimation");
       }
 
-      if ((WINDOW > 1100 && WINDOW < 1400) || (WINDOW > 1602 && WINDOW < 1800)) {
+      if ((WINDOW > 1100 && WINDOW < 1400) || (WINDOW > 1602 && WINDOW < 2254)) {
         changeStyle(titlePrincipal, "scrollAnimation");
         changeStyle(titleSecondary, "scrollAnimation");
       } else {
