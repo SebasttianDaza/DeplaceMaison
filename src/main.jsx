@@ -8,6 +8,7 @@ import Header from "./Components/Header/header";
 import Draggable from "./Components/Draggable/draggable";
 import Button from "./Components/button/button.jsx";
 import Comments from "./Components/Comments/comments.jsx";
+import Footer from "./Components/Footer/footer.jsx";
 
 class Main extends React.Component {
   childElementsSend() {
@@ -94,6 +95,9 @@ class Main extends React.Component {
         </section>
         <section className="sectionComments">
           <Comments />
+        </section>
+        <section className="sectionFooter">
+          <Footer />
         </section>
       </div>
     );

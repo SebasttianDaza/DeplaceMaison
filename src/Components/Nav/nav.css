@@ -79,6 +79,11 @@ h3.scrollAnimations {
     transition: opacity 0.2s;
 }
 
+section.scrollAnimationParagraph {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
 @media screen and (max-width: 900px) {
     
     .Nav {

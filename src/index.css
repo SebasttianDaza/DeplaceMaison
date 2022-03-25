@@ -173,6 +173,13 @@ img {
   margin: 4rem auto 4rem 0;
 }
 
+.sectionFooter {
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+  padding: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   .contentMarquee {
     height: auto;

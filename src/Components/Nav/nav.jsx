@@ -19,24 +19,29 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const WINDOW = window.scrollY;
-      if ((WINDOW > 600 && WINDOW < 800) || (WINDOW > 1100 && WINDOW < 1700)) {
+      console.log(WINDOW);
+      if ((WINDOW > 600 && WINDOW < 800) || (WINDOW > 1100 && WINDOW < 1700) || WINDOW >= 2027) {
         changeStyle(menu, "scrollAnimation");
       } else {
         removeStyle(menu, "scrollAnimation");
       }
 
-      if ((WINDOW > 1100 && WINDOW < 1400) || (WINDOW > 1602 && WINDOW < 2254)) {
+      if ((WINDOW > 1100 && WINDOW < 1400) || (WINDOW > 1602 && WINDOW < 2254) || WINDOW >= 2327) {
         changeStyle(titlePrincipal, "scrollAnimation");
-        changeStyle(titleSecondary, "scrollAnimation");
       } else {
         removeStyle(titlePrincipal, "scrollAnimation");
-        removeStyle(titleSecondary, "scrollAnimation");
       }
 
       if (WINDOW >= 2) {
         changeStyle(titleNav, "scrollAnimations");
       } else {
         removeStyle(titleNav, "scrollAnimations");
+      }
+
+      if (WINDOW > 1227) {
+        changeStyle(titleSecondary, "scrollAnimationParagraph");
+      } else {
+        removeStyle(titleSecondary, "scrollAnimationParagraph");
       }
     };
     window.addEventListener("scroll", handleScroll);
