@@ -1,5 +1,74 @@
 .footer {
     display: grid;
     grid-template-columns: 2fr 2fr 1fr ;
+    height: auto;
 }
-    
+
+.sectionEmail {
+    height: auto;
+}
+
+.emailInfoContent {
+    margin: 0 0 4rem 0;
+}
+
+.emailInfoContent p {
+    text-transform: uppercase;
+    font: var(--font-seven);
+    overflow: clip;
+}
+
+.emailImage {
+    width: 5vw;
+}
+
+.emailFormContent {
+    display: flex;
+    width: 100%;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 15vh;
+}
+
+.formContent label {
+    font: var(--font-first);
+    text-transform: uppercase;
+}
+
+.contentInput {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 80%;
+    height: auto;
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid var(--color-text);
+}
+
+.contentInput [type="email"] {
+    border: none;
+    background: none;
+    height: 100%;
+}
+
+.contentInput [type="email"]::placeholder {
+    color: var(--color-text);
+}
+
+.contentInput [type="email"]:focus {
+    outline: none;
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .sectionEmail {
+        display: none;
+    }
+}
