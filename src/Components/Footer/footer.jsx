@@ -24,10 +24,10 @@ const Footer = () => {
             </form>
           </div>
         </section>
-        <section>
-          <div>
-            <h6>info</h6>
-            <ul>
+        <section className="mainFooter">
+          <div className="mainChild">
+            <ul className="mainChildUrdonest">
+              <h6>info</h6>
               <li>faq</li>
               <li>returns</li>
               <li>contact</li>
@@ -35,18 +35,20 @@ const Footer = () => {
 
             <p>Credits</p>
           </div>
-          <div>
-            <h6>info</h6>
-            <ul>
-              <li>faq</li>
-              <li>returns</li>
-              <li>contact</li>
+          <div className="mainChild">
+            <ul className="mainChildUrdonest">
+              <h6>policy</h6>
+              <li>terms</li>
+              <li>privacy</li>
+              <li>cookie</li>
             </ul>
 
-            <p>Credits</p>
+            <p>© 2020 déplacé maison.</p>
           </div>
         </section>
-        <section>Hola</section>
+        <section className="btnUpDown">
+          <p>Hola</p>
+        </section>
       </footer>
     </ErrorBoundary>
   );

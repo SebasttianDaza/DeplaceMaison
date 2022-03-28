@@ -1,7 +1,11 @@
 .footer {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr ;
+    width: 100vw;
+    margin: 0 3rem 3rem 3rem;
+    grid-template-columns: 1fr 1fr .6fr;
     height: auto;
+    overflow: clip;
+    color: var(--color-text);
 }
 
 .sectionEmail {
@@ -30,7 +34,7 @@
 .formContent {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
     min-height: 15vh;
 }
@@ -44,7 +48,7 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     width: 80%;
-    height: auto;
+    height: 5vh;
     padding: 0 0 1rem 0;
     border-bottom: 1px solid var(--color-text);
 }
@@ -56,19 +60,83 @@
 }
 
 .contentInput [type="email"]::placeholder {
-    color: var(--color-text);
+    font: var(--font-seven);
 }
 
 .contentInput [type="email"]:focus {
     outline: none;
 }
 
+.contentInput [type="submit"] {
+    background: var(--color-primary);
+    color: var(--color-text);
+    border: none;
+    height: 100%;
+    width: 100%;
+    font: var(--font-first);
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mainFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.mainChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: clip;
+}
+
+
+
+.mainChildUrdonest {
+    margin: 0;
+    padding: 0;
+}
+
+.mainChild p , .mainChildUrdonest h6 {
+    font: var(--font-first);
+    text-transform: uppercase;
+}
+
+.mainChildUrdonest li {
+    font: var(--font-seven);
+    text-transform: uppercase;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.btnUpDown {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.btnUpDown {
+    width: 70px;
+    margin: 0;
+    padding: 0;
+}
+
 @media screen and (max-width:768px) {
     .footer {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr .5fr;
+        margin: 0 2rem 2rem 2rem;
     }
 
     .sectionEmail {
         display: none;
+    }
+
+    .mainChild p , .mainChildUrdonest h6 {
+        font: var(--font-five);
+    }
+
+    .mainChildUrdonest li {
+        font: var(--font-third-secondary)
     }
 }
