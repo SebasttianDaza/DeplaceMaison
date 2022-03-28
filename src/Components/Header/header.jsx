@@ -36,7 +36,7 @@ const Header = () => {
           />
         </div>
       </section>
-      <Button name="Explore" />
+      <Button name="Explore" class={false} />
     </header>
   );
 };

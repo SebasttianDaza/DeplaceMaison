@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Button = (props) => {
   return (
-    <section className="contentBtn">
-      <div className="linkExplore">
+    <section className={props.class === true ? "contentBtnSecond " : "contentBtn"}>
+      <div className={props.class === true ? "withoutThis" : "linkExplore"}>
         <a href="">{props.name}</a>
       </div>
       <div className="linkImage">
@@ -27,6 +27,7 @@ const Button = (props) => {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  class: PropTypes.bool,
 };
 
 export default Button;

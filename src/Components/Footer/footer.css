@@ -117,9 +117,25 @@
 }
 
 .btnUpDown {
-    width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
     margin: 0;
     padding: 0;
+}
+
+#contentBtnUpDown {
+    display: flex;
+    flex-direction: column;
+    width: 5vw;
+}
+
+.contentSocialMedia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .5rem;
+    width: 5vw;
 }
 
 @media screen and (max-width:768px) {

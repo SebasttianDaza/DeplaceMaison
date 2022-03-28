@@ -1,6 +1,7 @@
 import "./footer.css";
 import {ErrorBoundary} from "react-error-boundary";
 
+import Button from "../button/button.jsx";
 import ErrorFallback from "../../Errors/ErrorFallback.jsx";
 
 const Footer = () => {
@@ -47,7 +48,17 @@ const Footer = () => {
           </div>
         </section>
         <section className="btnUpDown">
-          <p>Hola</p>
+          <div id="contentBtnUpDown">
+            <Button name="up" class={true} />
+          </div>
+          <div className="contentSocialMedia">
+            <a href="#">
+              <img src="https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/facebookIcon.svg?alt=media&token=12bcc4c5-cf6d-4121-87ae-1ca386632cf1" />
+            </a>
+            <a href="#">
+              <img src="https://firebasestorage.googleapis.com/v0/b/deplacemaison-2f33d.appspot.com/o/instagramIcon.svg?alt=media&token=192e3a27-6cea-4ab9-af56-b208baa2a19f" />
+            </a>
+          </div>
         </section>
       </footer>
     </ErrorBoundary>

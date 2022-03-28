@@ -19,7 +19,6 @@ const Nav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const WINDOW = window.scrollY;
-      console.log(WINDOW);
       if ((WINDOW > 600 && WINDOW < 800) || (WINDOW > 1100 && WINDOW < 1700) || WINDOW >= 2027) {
         changeStyle(menu, "scrollAnimation");
       } else {

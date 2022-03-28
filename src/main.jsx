@@ -91,7 +91,7 @@ class Main extends React.Component {
         </section>
         <Draggable elementsRender={this.childElementsSend.bind(this)} />
         <section className="sectionBtn">
-          <Button name="SHOP ALL" />
+          <Button name="SHOP ALL" class={false} />
         </section>
         <section className="sectionComments">
           <Comments />
