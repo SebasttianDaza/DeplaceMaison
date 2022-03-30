@@ -9,6 +9,7 @@ import Draggable from "./Components/Draggable/draggable";
 import Button from "./Components/button/button.jsx";
 import Comments from "./Components/Comments/comments.jsx";
 import Footer from "./Components/Footer/footer.jsx";
+import Cursor from "./Components/GooeyCursor/gooey.jsx";
 
 class Main extends React.Component {
   childElementsSend() {
@@ -56,6 +57,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <Cursor />
         <Nav />
         <Header />
         <section className="contentMarquee">

@@ -96,6 +96,7 @@
     display: block;
     width: auto;
     height: auto;
+    transform: rotate(270deg);
 }
 
 
