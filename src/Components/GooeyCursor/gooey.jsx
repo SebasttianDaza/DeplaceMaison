@@ -9,29 +9,55 @@ import useMousePosition from "../../Hooks/useMousePosition";
 const Cursor = () => {
   const {x, y} = useMousePosition();
   const [cursorHistory, setCursorHistory] = useState(Array(20).fill({x: 0, y: 0}));
+  const {isActiveCursor, setIsActiveCursor} = useState(true);
 
   const cursor = React.createRef();
 
   const updateCursor = useCallback(() => {
-    setCursorHistory(cursorHistory.slice(1).concat({x, y}));
-  }, [x, y, cursorHistory]);
+    setCursorHistory((prevCursorHistory) => {
+      const newCursorHistory = [...prevCursorHistory];
+      newCursorHistory.shift();
+      newCursorHistory.push({x, y});
+      return newCursorHistory;
+    });
+  }, [x, y]);
+
+  const identifyUserAgent = useCallback(() => {
+    const userAgent = navigator.userAgent;
+    if (
+      userAgent.match(/iPhone/i) ||
+      userAgent.match(/iPad/i) ||
+      userAgent.match(/iPod/i) ||
+      userAgent.match(/Android/i)
+    ) {
+      setIsActiveCursor(false);
+    }
+  }, [setIsActiveCursor]);
 
   useEffect(() => {
-    //updateCursor();
-    return () => {};
-  }, [updateCursor]);
+    identifyUserAgent();
+    if (isActiveCursor) {
+      updateCursor();
+    }
+    return () => {
+      updateCursor();
+    };
+  }, [updateCursor, identifyUserAgent, isActiveCursor]);
 
   return (
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <div id="cursor">
+        <div id={!isActiveCursor ? "cursor" : "cursorA"}>
           {cursorHistory.map((cursor, i) => {
             const opacity = 1 - i / 20;
             return (
               <div
                 key={i}
                 className="cursor-circle"
-                style={{left: cursor.x, top: cursor.y, opacity}}
+                style={{
+                  transform: `translate(${cursor.x}px, ${cursor.y}px)`,
+                  opacity,
+                }}
               />
             );
           })}
