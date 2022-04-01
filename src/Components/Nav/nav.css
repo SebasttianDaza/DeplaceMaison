@@ -84,14 +84,12 @@ section.scrollAnimationParagraph {
     transition: opacity 0.2s;
 }
 
-@media screen and (max-width: 900px) {
-    
+@media screen and (max-width: 900px) {   
     .Nav {
         width: 90vw;
         margin: 0 auto;
         padding: 1rem 0;
         height: 10vh;
-        position: static;
     }
     
 

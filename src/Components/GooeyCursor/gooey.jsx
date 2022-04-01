@@ -1,5 +1,4 @@
 import "./gooey.css";
-import PropTypes from "prop-types";
 import React, {useState, useEffect, useCallback} from "react";
 import {ErrorBoundary} from "react-error-boundary";
 
@@ -7,11 +6,10 @@ import ErrorFallback from "../../Errors/ErrorFallback.jsx";
 import useMousePosition from "../../Hooks/useMousePosition";
 
 const Cursor = () => {
-  const {x, y} = useMousePosition();
+  const {mousePosition, isActiveMove} = useMousePosition();
+  const {x, y} = mousePosition;
   const [cursorHistory, setCursorHistory] = useState(Array(20).fill({x: 0, y: 0}));
-  const {isActiveCursor, setIsActiveCursor} = useState(true);
-
-  const cursor = React.createRef();
+  const [isActiveCursor, setIsActiveCursor] = useState(true);
 
   const updateCursor = useCallback(() => {
     setCursorHistory((prevCursorHistory) => {
@@ -47,7 +45,7 @@ const Cursor = () => {
   return (
     <>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <div id={!isActiveCursor ? "cursor" : "cursorA"}>
+        <div id={isActiveCursor ? "cursor" : "cursorA"}>
           {cursorHistory.map((cursor, i) => {
             const opacity = 1 - i / 20;
             return (
