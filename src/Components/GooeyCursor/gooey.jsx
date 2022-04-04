@@ -36,9 +36,11 @@ const Cursor = () => {
     identifyUserAgent();
     if (isActiveCursor) {
       updateCursor();
+      window.requestAnimationFrame(updateCursor);
     }
     return () => {
       updateCursor();
+      window.cancelAnimationFrame(updateCursor);
     };
   }, [updateCursor, identifyUserAgent, isActiveCursor]);
 
